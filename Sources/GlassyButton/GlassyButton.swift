@@ -3,9 +3,9 @@
 
 import SwiftUI
 
-struct GlassyButton: ViewModifier {
-    var tint: Color
-    func body(content: Content) -> some View {
+public struct GlassyButton: ViewModifier {
+    public var tint: Color
+    public func body(content: Content) -> some View {
         if #available(iOS 26.0, *) {
             content.buttonStyle(.glassProminent).tint(tint)
         } else {
@@ -14,7 +14,7 @@ struct GlassyButton: ViewModifier {
     }
 }
 
-extension View {
+public extension View {
     func glassyButton(_ tint: Color = .primary) -> some View {
         modifier(GlassyButton(tint: tint))
     }
